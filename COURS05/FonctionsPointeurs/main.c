@@ -11,7 +11,7 @@ int main() {
     //poser les résultats
     int le_min, le_max;
 
-    //On appelle 
+    //On appelle
     min_max_de_3(a, b, c, &le_min, &le_max);
 
     printf("Le min: %d, le max: %d\n", le_min, le_max);
