@@ -19,7 +19,7 @@ typedef struct animal{
     char espece[100];
     char race[100];
     t_date date_naiss;
-    t_personne proprietaire;
+    t_personne* proprietaire;
 } t_animal;
 
 
@@ -44,14 +44,15 @@ int main() {
     a1->date_naiss.annee = 2021;
     a1->date_naiss.mois = 1;
     a1->date_naiss.jour = 20;
-    a1->proprietaire = p1;
+
+    a1->proprietaire = &p1;
 
     printf("Nom: %s, Espece: %s, Race: %s\nDate de naiss: %d-%d-%d\n",
            a1->nom, a1->espece, a1->race, a1->date_naiss.jour,
            a1->date_naiss.mois, a1->date_naiss.annee);
     printf("Propriétaire: %s %s, Tel: %s\n",
-           a1->proprietaire.prenom, a1->proprietaire.nom,
-           a1->proprietaire.telephone);
+           a1->proprietaire->prenom, a1->proprietaire->nom,
+           a1->proprietaire->telephone);
 
     return 0;
 }
